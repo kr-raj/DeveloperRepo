@@ -1,0 +1,16 @@
+{   
+    "lambda":"TimeFunction",
+    "name": "index",
+    "path": "/TimeResource",
+    "method": "GET",
+    "queryParameter": [{
+        "integration.request.querystring.petType" : "method.request.multivaluequerystring.petType"},
+      {  "integration.request.header.cookie" : "method.request.multivalueheader.cookie"
+    }],
+    "statusCode": [
+        {"status" : 200, "description" : "success"},
+        {"status" : 400, "description" : "error"},
+        {"status" : 500, "description" : "error"}
+    ]
+
+}
