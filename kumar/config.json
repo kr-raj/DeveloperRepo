@@ -1,0 +1,12 @@
+{   
+    "lambda":"TimeFunction",
+    "name": "index",
+    "path": "/TimeResource",
+    "method": "GET",
+    "statusCode": [
+        {"status" : 200, "description" : "success"},
+        {"status" : 400, "description" : "error"},
+        {"status" : 500, "description" : "error"}
+    ]
+
+}

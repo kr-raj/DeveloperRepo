@@ -1,0 +1,36 @@
+{
+    "lambda": "TimeFunction",
+    "name": "index",
+    "path": "/TimeResource",
+    "method": "GET",
+    "queryParameter": [
+        {
+            "name": "name",
+            "in": "query",
+            "description": "The Product that needs to be fetched",
+            "required": true,
+            "type": "string"
+        },
+        {  
+            "name":"city",
+            "in":"query",
+            "description":"The Product locale needs to be fetched.d",
+            "required":true,
+            "type":"string"
+         }
+    ],
+    "statusCode": [
+        {
+            "status": 200,
+            "description": "success"
+        },
+        {
+            "status": 400,
+            "description": "BadRequestError"
+        },
+        {
+            "status": 500,
+            "description": "InternalError"
+        }
+    ]
+}
