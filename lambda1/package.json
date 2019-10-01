@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "country-list": "2.2.0"
+
   }
-  
 }

@@ -1,8 +1,9 @@
 {   
     "lambda":"TimeFunction",
-    "name": "index",
-    "path": "/TimeResource",
+    "handlerName": "index",
+    "path": "/TimeAPI",
     "method": "GET",
+    "apiName" : "TimeAPI",
     "statusCode": [
         {"status" : 200, "description" : "success"},
         {"status" : 400, "description" : "error"},

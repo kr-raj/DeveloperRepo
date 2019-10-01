@@ -1,51 +1,17 @@
-'use strict';
-console.log('Loading hello world function');
- 
-exports.handler = async (event) => {
-    let name = "Jhon";
-    let city = 'World';
-    let time = 'day';
-    let day = '';
-    let responseCode = 200;
-    console.log("request: " + JSON.stringify(event));
-    
-    if (event.queryStringParameters && event.queryStringParameters.name) {
-        console.log("Received name: " + event.queryStringParameters.name);
-        name = event.queryStringParameters.name;
-    }
-    
-    if (event.queryStringParameters && event.queryStringParameters.city) {
-        console.log("Received city: " + event.queryStringParameters.city);
-        city = event.queryStringParameters.city;
-    }
-    
-    if (event.headers && event.headers['day']) {
-        console.log("Received day: " + event.headers.day);
-        day = event.headers.day;
-    }
-    
-    if (event.body) {
-        let body = JSON.parse(event.body)
-        if (body.time) 
-            time = body.time;
-    }
- 
-    let greeting = `Good ${time}, ${name} of ${city}.`;
-    if (day) greeting += ` Happy ${day}!`;
+const moment = require('moment');
+exports.handler = function(event, context, callback) {
+  const min = 1;
+  const max = 6;
 
-    let responseBody = {
-        message: greeting,
-        input: event
-    };
-    
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  const now = moment().format();
 
-    let response = {
-        statusCode: responseCode,
-        headers: {
-            "x-custom-header" : "my custom header value"
-        },
-        body: JSON.stringify(responseBody)
-    };
-    console.log("response: " + JSON.stringify(response))
-    return response;
+  const message = 'Your dice throw resulted in ' + 
+  randomNumber + ' and was issued at ' + now;
+
+ 
+  callback(null, {
+  	statusCode: '200',
+    body: message
+  });
 };

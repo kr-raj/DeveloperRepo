@@ -1,19 +1,10 @@
 {
-    "lambda": "Calc",
-    "name": "index",
-    "path": "/LambdaCalc",
-    "method": "POST",
-    "queryParameter": [
-        {
-            "a": "$input.params('operand1')"
-        },
-        {
-            "b": "$input.params('operand2')"
-        },
-        {
-            "op": "$input.params('operator')"
-        }
-    ],
+     "lambda":"calFunction",
+    "handlerName": "index",
+    "path": "/calc",
+    "method": "GET",
+    "apiName" : "calc",
+    
     "statusCode": [
         {
             "status": 200,

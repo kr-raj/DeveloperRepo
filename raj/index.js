@@ -37,5 +37,8 @@ exports.handler = function(event, context, callback) {
             callback("400 Invalid Operator");
             break;
     }
-    callback(null, res);
+    callback(null, {    
+    statusCode: '200',
+    body: res
+  });
 };

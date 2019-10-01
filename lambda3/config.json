@@ -1,24 +1,9 @@
 {
-    "lambda": "TimeFunction",
-    "name": "index",
-    "path": "/TimeResource",
+    "lambda":"DiceFunction",
+    "handlerName": "index",
+    "path": "/Dice",
     "method": "GET",
-    "queryParameter": [
-        {
-            "name": "name",
-            "in": "query",
-            "description": "The Product that needs to be fetched",
-            "required": true,
-            "type": "string"
-        },
-        {  
-            "name":"city",
-            "in":"query",
-            "description":"The Product locale needs to be fetched.d",
-            "required":true,
-            "type":"string"
-         }
-    ],
+    "apiName" : "DiceAPI",
     "statusCode": [
         {
             "status": 200,
